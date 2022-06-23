@@ -1,6 +1,8 @@
 # PROBLEMA 05: Crie um programa que dada uma string, coloque as letras dela em 
 # ordem crescente (Dica: Use C, Python ou Ruby) 
 
+# Método do Merge Sort foi utilizado para resolver esse problema.
+
 def mergeSort(lista):
     if len(lista) > 1:
         metade = len(lista) // 2

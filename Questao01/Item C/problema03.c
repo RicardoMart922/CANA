@@ -4,6 +4,8 @@
 *
 *   I  - O menor número e quantas vezes ele aparece no vetor;
 *   II - O maior número e quantas vezes ele aparece no vetor;
+*
+* Método do Insertion Sort foi utilizado para resolver esse problema.
 */
 
 #include <stdio.h>

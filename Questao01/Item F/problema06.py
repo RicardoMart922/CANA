@@ -1,5 +1,7 @@
 # PROBLEMA 06: Faça um programa que leia N nomes e ordeno-os pelo tamanho
 # (Dica: Use C, Python ou Ruby)
+#
+# Método de Bubble Sort foi utilizado para resolver esse problema.
 
 def bubbleSort(lista):
     tamanho = len(lista)-1

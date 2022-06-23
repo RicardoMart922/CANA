@@ -9,6 +9,8 @@
 *
 * Implemente uma função em C que dado um array de tamanho N dessa estrutura,
 * ordene o array pelo campo escolhido pelo usuário.
+*
+* Método do Selection sort foi utilizado para resolver esse problema.
 */
 
 #include <stdio.h>
