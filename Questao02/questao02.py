@@ -1,3 +1,26 @@
+# Instituo Federal do Ceará - IFCE
+# Campus: Tianguá
+# Curso: Bacharelado em Ciência da Computação
+# Disciplina: Construção e Análise de Algoritmos
+# Professor: Adonias Caetano de Oliveira
+# Assunto: Métodos de Ordenação
+#
+# Equipe:
+#       -> Francinilson Rodrigues Lima
+#       -> Ricardo Martins Cordeiro
+#
+# Implemente em Python todos os noves algoritmos ensinados em sala de aula,
+# realizando experimentos que avaliem o tempo de execução para ordenar de acordo 
+# com as seguintes regras:
+#
+# I   - Serão noves vetores com os seguintes tamanhos para cada um: 1000, 3000,
+#       6000, 9000, 12000, 15000, 18000, 21000, 24000.
+# II  - Os valores armazenados nos noves vetores serão números inteiros gerados
+#       aleatoriamente.
+# III - Usar a biblioteca "matplotlib.pyplot".
+# IV  - Plotar um gráfico comparando o tempo de exucução dos algoritmos de 
+#       acordo com o tamanho do vetor.
+
 import matplotlib.pyplot as plt
 import random
 import timeit
