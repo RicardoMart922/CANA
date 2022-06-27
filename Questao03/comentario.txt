@@ -1,0 +1,4 @@
+Com base na implementação dos métodos de busca tanto binária quanto linear, pode ser 
+observado que a busca binária é mais eficiente do que a busca linear, porém, os métodos 
+de busca binária necessitam de um conjunto de valores ordenados, ou seja, há a necessidade
+do auxílio de um método de ordenação.
