@@ -1,3 +1,25 @@
+/*
+* Instituo Federal do Ceará - IFCE
+* Campus: Tianguá
+* Curso: Bacharelado em Ciência da Computação
+* Disciplina: Construção e Análise de Algoritmos
+* Professor: Adonias Caetano de Oliveira
+* Assunto: Métodos de Ordenação
+*
+* Equipe:
+*       -> Francinilson Rodrigues Lima
+*       -> Ricardo Martins Cordeiro
+*
+* Implemente uma estrutura de dados Árvore Binária em Python ou Java ou C++
+* usando conceitos de orientação a objetos. A sua classe deve ter os seguintes
+* métodos:
+* 
+* a) getNosFolha: retorna uma lista de nós folhas;
+* b) getGrau(int nó): retorna o grau de um nó;
+* c) altura: retorna altura da árvore;  
+* d) profundidade: retorna o valor de profundidade da árvore.
+*/
+
 import java.util.ArrayList;
 
 public class Main {
@@ -37,11 +59,11 @@ public class Main {
 
         imprimirLinha();
 
-        System.out.println("Altura: " + arvore.altura());
+        System.out.println("Altura da árvore: " + arvore.altura());
 
         imprimirLinha();
 
-        System.out.println("Profundidade: " + arvore.profundidade());
+        System.out.println("Profundidade da árvore: " + arvore.profundidade());
 
         imprimirLinha();
     }

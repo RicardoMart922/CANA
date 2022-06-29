@@ -32,14 +32,14 @@ public class ArvoreBinaria {
     }
 
     public void inOrderRecursivo() {
-        Stack<No> pilha = new Stack<>();
+        Stack<No> stack = new Stack<>();
         No atual = raiz;
-        while (atual != null || !pilha.isEmpty()) {
+        while (atual != null || !stack.isEmpty()) {
             while (atual != null) {
-                pilha.push(atual);
+                stack.push(atual);
                 atual = atual.getEsquerdo();
             }
-            No top = pilha.pop();
+            No top = stack.pop();
             visitar(top.getValor());
             atual = top.getDireito();
         }
@@ -54,46 +54,46 @@ public class ArvoreBinaria {
     }
 
     public void preOrderRecursivo() {
-        Stack<No> pilha = new Stack<>();
+        Stack<No> stack = new Stack<>();
         No atual = raiz;
-        pilha.push(raiz);
-        while (atual != null && !pilha.isEmpty()) {
-            atual = pilha.pop();
+        stack.push(raiz);
+        while (atual != null && !stack.isEmpty()) {
+            atual = stack.pop();
             visitar(atual.getValor());
             if (atual.getDireito() != null)
-                pilha.push(atual.getDireito());
+                stack.push(atual.getDireito());
             if (atual.getEsquerdo() != null)
-                pilha.push(atual.getEsquerdo());
+                stack.push(atual.getEsquerdo());
         }
     }
 
-    public void posOrder(No no) {
+    public void postOrder(No no) {
         if (no != null) {
-            posOrder(no.getEsquerdo());
-            posOrder(no.getDireito());
+            postOrder(no.getEsquerdo());
+            postOrder(no.getDireito());
             visitar(no.getValor());
         }
     }
     
-    public void posOrderRecursivo() {
-        Stack<No> pilha = new Stack<>();
+    public void postOrderRecursivo() {
+        Stack<No>stack = new Stack<>();
         No prev = raiz;
         No atual = raiz;
-        pilha.push(raiz);
-        while (atual != null && !pilha.isEmpty()) {
-            atual = pilha.peek();
+       stack.push(raiz);
+        while (atual != null && !stack.isEmpty()) {
+            atual =stack.peek();
             boolean hasChild = (atual.getEsquerdo() != null || atual.getDireito() != null);
             boolean isPrevLastChild = (prev == atual.getDireito() || (prev == atual.getEsquerdo() && atual.getDireito() == null));
             if (!hasChild || isPrevLastChild) {
-                atual = pilha.pop();
+                atual =stack.pop();
                 visitar(atual.getValor());
                 prev = atual;
             } else {
                 if (atual.getDireito() != null) {
-                    pilha.push(atual.getDireito());
+                   stack.push(atual.getDireito());
                 }
                 if (atual.getEsquerdo() != null) {
-                    pilha.push(atual.getEsquerdo());
+                   stack.push(atual.getEsquerdo());
                 }
             }
         }   
@@ -137,8 +137,8 @@ public class ArvoreBinaria {
             getGrauRecursivo(atual.getDireito(), valor);
     }
 
-    private void visitar(int valor) {
-        System.out.print(" " + valor);        
+    public int profundidade() {
+        return altura();
     }
 
     public int altura() {
@@ -157,7 +157,7 @@ public class ArvoreBinaria {
         return (alturaDireita > alturaEsquerda) ? alturaDireita : alturaEsquerda;
     }
 
-    public int profundidade() {
-        return altura();
+    private void visitar(int valor) {
+        System.out.print(" " + valor);        
     }
 }
