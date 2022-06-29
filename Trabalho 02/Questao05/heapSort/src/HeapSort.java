@@ -4,7 +4,7 @@
 * Curso: Bacharelado em Ciência da Computação
 * Disciplina: Construção e Análise de Algoritmos
 * Professor: Adonias Caetano de Oliveira
-* Assunto: Métodos de Ordenação
+* Assunto: Árvore e Heapsort
 *
 * Equipe:
 *       -> Francinilson Rodrigues Lima

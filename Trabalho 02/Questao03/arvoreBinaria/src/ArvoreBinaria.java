@@ -23,28 +23,6 @@ public class ArvoreBinaria {
         return atual;
     }
 
-    public void inOrder(No no) {
-        if (no != null) {
-            inOrder(no.getEsquerdo());
-            visitar(no.getValor());
-            inOrder(no.getDireito());
-        }
-    }
-
-    public void inOrderRecursivo() {
-        Stack<No> stack = new Stack<>();
-        No atual = raiz;
-        while (atual != null || !stack.isEmpty()) {
-            while (atual != null) {
-                stack.push(atual);
-                atual = atual.getEsquerdo();
-            }
-            No top = stack.pop();
-            visitar(top.getValor());
-            atual = top.getDireito();
-        }
-    }
-
     public void preOrder(No no) {
         if (no != null) {
             visitar(no.getValor());
@@ -64,6 +42,28 @@ public class ArvoreBinaria {
                 stack.push(atual.getDireito());
             if (atual.getEsquerdo() != null)
                 stack.push(atual.getEsquerdo());
+        }
+    }
+
+    public void inOrder(No no) {
+        if (no != null) {
+            inOrder(no.getEsquerdo());
+            visitar(no.getValor());
+            inOrder(no.getDireito());
+        }
+    }
+
+    public void inOrderRecursivo() {
+        Stack<No> stack = new Stack<>();
+        No atual = raiz;
+        while (atual != null || !stack.isEmpty()) {
+            while (atual != null) {
+                stack.push(atual);
+                atual = atual.getEsquerdo();
+            }
+            No top = stack.pop();
+            visitar(top.getValor());
+            atual = top.getDireito();
         }
     }
 
@@ -99,23 +99,6 @@ public class ArvoreBinaria {
         }   
     }
 
-    public ArrayList<No> getNosFolha() {
-        ArrayList<No> folhas = new ArrayList<No>();
-        adicionarNoFolhaRecursivo(folhas, raiz);
-        return folhas;
-    }
-    
-    private void adicionarNoFolhaRecursivo(ArrayList<No> folhas, No raiz) {
-        if (raiz != null) {
-            if ((raiz.getDireito() == null) && (raiz.getEsquerdo() == null)) 
-                folhas.add(raiz);
-            else {
-                adicionarNoFolhaRecursivo(folhas, raiz.getEsquerdo());
-                adicionarNoFolhaRecursivo(folhas, raiz.getDireito());
-            }
-        }
-    }
-
     public int getGrau(int valor) {
         if (this.raiz == null) 
             return -1;
@@ -135,6 +118,23 @@ public class ArvoreBinaria {
         return valor < atual.getValor() ? 
             getGrauRecursivo(atual.getEsquerdo(), valor) :
             getGrauRecursivo(atual.getDireito(), valor);
+    }
+
+    public ArrayList<No> getNosFolha() {
+        ArrayList<No> folhas = new ArrayList<No>();
+        adicionarNoFolhaRecursivo(folhas, raiz);
+        return folhas;
+    }
+    
+    private void adicionarNoFolhaRecursivo(ArrayList<No> folhas, No raiz) {
+        if (raiz != null) {
+            if ((raiz.getDireito() == null) && (raiz.getEsquerdo() == null)) 
+                folhas.add(raiz);
+            else {
+                adicionarNoFolhaRecursivo(folhas, raiz.getEsquerdo());
+                adicionarNoFolhaRecursivo(folhas, raiz.getDireito());
+            }
+        }
     }
 
     public int profundidade() {
