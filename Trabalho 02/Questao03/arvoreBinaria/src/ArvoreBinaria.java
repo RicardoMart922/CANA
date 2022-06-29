@@ -115,9 +115,10 @@ public class ArvoreBinaria {
                 return 2;
             return 1;
         }   
-        return valor < atual.getValor() ? 
-            getGrauRecursivo(atual.getEsquerdo(), valor) :
-            getGrauRecursivo(atual.getDireito(), valor);
+        if (valor < atual.getValor()) 
+            return getGrauRecursivo(atual.getEsquerdo(), valor);
+        else
+            return getGrauRecursivo(atual.getDireito(), valor);
     }
 
     public ArrayList<No> getNosFolha() {
@@ -146,7 +147,10 @@ public class ArvoreBinaria {
             return -1;
         int alturaEsquerda = alturaRecursivo(raiz.getEsquerdo());
         int alturaDireita = alturaRecursivo(raiz.getDireito());
-        return (alturaDireita > alturaEsquerda) ? alturaDireita : alturaEsquerda;
+        if (alturaDireita > alturaEsquerda) 
+           return alturaDireita;
+        else
+           return alturaEsquerda;
     }
 
     private int alturaRecursivo(No atual) {
@@ -154,7 +158,10 @@ public class ArvoreBinaria {
             return 0;
         int alturaEsquerda = alturaRecursivo(atual.getEsquerdo()) + 1;
         int alturaDireita = alturaRecursivo(atual.getDireito()) + 1;
-        return (alturaDireita > alturaEsquerda) ? alturaDireita : alturaEsquerda;
+        if (alturaDireita > alturaEsquerda) 
+           return alturaDireita;
+        else
+           return alturaEsquerda;
     }
 
     private void visitar(int valor) {
